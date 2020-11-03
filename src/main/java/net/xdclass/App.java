@@ -16,6 +16,8 @@ public class App {
 		ApplicationContext context = new ClassPathXmlApplicationContext("classpath:config\\spring-config.xml");
 		UserService userService = (UserService)context.getBean("userService");
 		List<User> userList = userService.listUser();
-		userList.forEach(System.out::println);
+		for (User user : userList) {
+			System.out.println(user);
+		}
 	}
 }
